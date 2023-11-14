@@ -14,5 +14,5 @@ export default defineConfig({
       'scene': resolve(__dirname, 'src/assets/scenery'),
     }
   },
-  publicPath: './',
+  base:'./',
 })
