@@ -8,18 +8,18 @@
           </svg>
         </label>
         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a @click="towall" class="text-lg">留言墙</a></li>
-          <li><a @click="toscene" class="text-lg">校园风景</a></li>
-          <li><a @click="toabout" class="text-lg">关于我</a></li>
+          <li><a @click="toPage('Wall')" class="text-lg">留言墙</a></li>
+          <li><a @click="toPage('Scene')" class="text-lg">校园风景</a></li>
+          <li><a @click="toPage('About')" class="text-lg">关于我</a></li>
         </ul>
       </div>
-      <a class="btn btn-ghost text-xl" @click="toHome">BUAAspace</a>
+      <a class="btn btn-ghost text-xl" @click="toPage('/BUAAspace/')">BUAAspace</a>
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a @click="towall" class="text-lg">留言墙</a></li>
-        <li><a @click="toscene" class="text-lg">校园风景</a></li>
-        <li><a @click="toabout" class="text-lg">关于我</a></li>
+        <li><a @click="toPage('Wall')" class="text-lg">留言墙</a></li>
+        <li><a @click="toPage('Scene')" class="text-lg">校园风景</a></li>
+        <li><a @click="toPage('About')" class="text-lg">关于我</a></li>
       </ul>
     </div>
     <div class="navbar-end">
@@ -59,26 +59,20 @@
           <h3 class="text-2xl font-bold text-center">歌单</h3>
           <Audio />
         </div>
-      <label class="modal-backdrop" for="my_modal_7">Close</label>
+        <label class="modal-backdrop" for="my_modal_7">Close</label>
+      </div>
     </div>
   </div>
-</div></template>
+</template>
 
 <script setup>
 import Audio from './Audio.vue';
-const toHome = () => {
-  window.location.href = '/';
-}
+import { useRouter } from 'vue-router';
 
-const towall = () => {
-  window.location.href = '/wall';
-}
-
-const toscene = () => {
-  window.location.href = '/scene';
-}
-
-const toabout = () => {
-  window.location.href = '/about';
+const router = useRouter();
+const toPage = (url) => {
+  router.push({
+    path: url
+  });
 }
 </script>

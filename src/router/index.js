@@ -11,22 +11,22 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/wall',
+            path: '/BUAAspace/Wall',
             name: 'Wall',
             component: Wall
         },
         {
-            path: '/',
+            path: '/BUAAspace/',
             name: 'Home',
             component: Home
         },
         {
-            path: '/scene',
+            path: '/BUAAspace/Scene',
             name: 'Scene',
             component: Scene
         },
         {
-            path: '/about',
+            path: '/BUAAspace/About',
             name: 'About',
             component: About
         }
